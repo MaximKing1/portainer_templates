@@ -43,30 +43,59 @@
 			"categories": [
 				"Other",
 				"Tools",
-				"Authentication"
+				"Photo"
 			],
-			"description": "An open-source authentication and authorization server providing 2-factor authentication and single sign-on (SSO) for your applications via a web portal.",
+			"description": "Chevereto is a powerful and fast image hosting script that allows you to create your very own full featured image hosting website in just minutes. Please note that this offers only the free Chevereto version..",
 			"env": [
 				{
-					"label": "TZ",
-					"name": "TZ"
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "CHEVERETO_DB_HOST",
+					"name": "CHEVERETO_DB_HOST",
+					"set": ""
+				},
+				{
+					"label": "CHEVERETO_DB_USERNAME",
+					"name": "CHEVERETO_DB_USERNAME",
+					"set": ""
+				},
+				{
+					"label": "CHEVERETO_DB_PASSWORD",
+					"name": "CHEVERETO_DB_PASSWORD",
+					"set": ""
+				},
+				{
+					"label": "CHEVERETO_DB_NAME",
+					"name": "CHEVERETO_DB_NAME",
+					"set": ""
+				},
+				{
+					"label": "CHEVERETO_DB_PREFIX",
+					"name": "CHEVERETO_DB_PREFIX",
+					"set": ""
 				}
 			],
-			"image": "authelia/authelia:latest",
-			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/authelia.png",
-			"name": "authelia",
-			"note": "Requires a configuration.yml file in order to work. Documentation is Available \u003ca href='https://docs.authelia.com/deployment/deployment-ha'\u003ehere\u003c/a\u003e.",
+			"image": "nmtan/chevereto:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/Chevereto.png",
+			"name": "Chevereto",
 			"platform": "linux",
 			"ports": [
-				"9091:9091/tcp"
+				"80/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "Authelia",
+			"title": "Chevereto",
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/portainer/Files/AppData/Config/Authelia",
-					"container": "/etc/authelia/"
+					"container": "/var/www/html/images"
 				}
 			]
 		},
